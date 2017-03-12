@@ -12,6 +12,10 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
+  
+  <%= f.label :phone_number %>
+  <%= f.password_field :phone_number, class: 'form-control' %>
+  
 
   <% if yield(:require_code) == 'True' %>
     <%= f.label :access_code %>
