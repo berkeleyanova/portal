@@ -2,5 +2,29 @@
 <h1>All users</h1>
 
 <ul class="users">
-  <%= render @users %>
+    <% index = 0 %>
+    <% while (index < @users.length) do%>
+      <div class="row">
+            <div class="col-sm-4">
+                <img src="https://www.w3schools.com/html/html5.gif"><br><br>
+                <%= link_to @users[index].name, user_path(@users[index])%> 
+                <% index += 1 %>
+            </div>
+            <div class="col-sm-4">
+                <% if index != @users.length %>
+                    <img src="https://www.w3schools.com/html/html5.gif"><br><br>
+                    <%= link_to @users[index].name, user_path(@users[index])%> 
+                    <% index += 1 %>
+                <% end %>
+            </div>
+            <div class="col-sm-4">
+                <% if index != @users.length %>
+                    <img src="https://www.w3schools.com/html/html5.gif"><br><br>
+                    <%= link_to @users[index].name, user_path(@users[index])%> 
+                    <% index += 1 %>
+                <% end %>
+            </div>
+        </div>
+        
+    <%end%>
 </ul>

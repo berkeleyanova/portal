@@ -13,10 +13,21 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
   
-  <%= f.label :phone_number %>
-  <%= f.password_field :phone_number, class: 'form-control' %>
-  
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: 'form-control' %>
 
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday, class: 'form-control' %>
+  
+  <%= f.label :year %>
+  <%= f.text_field :year, class: 'form-control' %>
+  
+  <%= f.label "Favorite Programming Language" %>
+  <%= f.text_field :favprog, class: 'form-control' %>
+  
+  <%= f.label "Favorite Food" %>
+  <%= f.text_field :food, class: 'form-control' %>
+  
   <% if yield(:require_code) == 'True' %>
     <%= f.label :access_code %>
     <%= f.text_field "access_code", class: 'form-control' %>
