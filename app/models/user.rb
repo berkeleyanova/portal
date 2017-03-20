@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	
 	validates :phone, presence: true, length: { minimum: 10 }, allow_nil: true
 	
-	has_attached_file :photo, styles: { medium: "200x200", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+	has_attached_file :photo, styles: { large: "400x400", medium: "200x200", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
 	validates :photo, attachment_presence: true, allow_nil: true
     validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 	
