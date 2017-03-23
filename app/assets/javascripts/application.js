@@ -1,3 +1,4 @@
+/* global $ */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -15,3 +16,12 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require fullcalendar
+
+$(document).on('turbolinks:load', function() {
+    $('#calendar').fullCalendar({
+        events: '/events.json',
+        editable: true
+    });
+})
