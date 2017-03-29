@@ -76,6 +76,8 @@ div {
   }
 }
 
+/** Custom added to better style the ANova Calendar */
+
 #event_display_container {
   margin-bottom: calc(5vh);
 }
@@ -92,4 +94,9 @@ div {
 #button_container {
   padding-top: 5px;
   padding-bottom: 20px;
+}
+
+.fc-event {
+  background-color: #3F94D0;
+  border: 1px solid #3F94D0;
 }
