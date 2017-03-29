@@ -1,9 +1,14 @@
+html {
+  min-height: 100%;  
+}
+
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin: 0 0 50px;
 }
 
 p, ol, ul, td {
@@ -22,12 +27,11 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: black;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: black;
   }
 }
 
@@ -70,4 +74,22 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+#event_display_container {
+  margin-bottom: calc(5vh);
+}
+
+.event_title_text {
+  font-size: 18px;
+}
+
+.container {
+  padding-top: 8px;
+  height: 100%;
+}
+
+#button_container {
+  padding-top: 5px;
+  padding-bottom: 20px;
 }

@@ -1,19 +1,29 @@
-<p id="notice"><%= notice %></p>
+<h1>Event Information</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div id="event_display_container">
+  <p>
+    <strong class="event_title_text">Name:</strong>
+    <%= @event.name %>
+  </p>
+  
+  <p>
+    <strong class="event_title_text">Description:</strong>
+    <%= @event.description %>
+  </p>
+  
+  <p>
+    <strong class="event_title_text">Start Time:</strong>
+    <%= start_time_str = @event.start_time.to_s
+      start_time_str[0...start_time_str.index("UTC")] %>
+  </p>
+  
+  <p>
+    <strong class="event_title_text">End Time:</strong>
+    <%= end_time_str = @event.end_time.to_s
+      end_time_str[0...end_time_str.index("UTC")] %>
+  </p>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Start:</strong>
-  <%= @event.start %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event), style: 'color: black;' %> |
+<%= link_to 'Back', events_path, style: 'color: black;' %> |
+<%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: black;' %>
