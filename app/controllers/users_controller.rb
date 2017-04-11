@@ -45,6 +45,16 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
+  
+  def search
+    search = params[:search]
+    if search.length > 0
+      @users = User.where("lower(name) like ?", "%#{search.downcase}%")
+    else
+      @users = User.all
+    end
+    render partial: 'users'
+  end
 
   private
 

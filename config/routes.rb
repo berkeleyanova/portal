@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'signup' => 'users#new'
   root 'sessions#new'
-  resources :users
+  resources :users do
+    collection do
+      get 'search'
+    end
+  end
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
