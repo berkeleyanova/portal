@@ -4,8 +4,5 @@ class AddFieldsToUser < ActiveRecord::Migration
         add_column :users, :year, :string
         add_column :users, :favprog, :string
         add_column :users, :food, :string
-        
-
-
   end
 end

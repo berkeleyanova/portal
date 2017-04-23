@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token
 	attr_accessor :access_code
+	has_many :schools
+	
 	#validate :access_code_valid, :on => :create
 	before_save { self.email = email.downcase }
 	validates :name,  presence: true, length: { maximum: 50 }
@@ -29,7 +31,12 @@ class User < ActiveRecord::Base
 	def User.new_token
 	    SecureRandom.urlsafe_base64
 	end
-
+	
+	# Return the list of schools of a user 
+	def User.getSchools(user)
+		User.schools
+	end 
+	
 	# Remembers a user in the database for use in persistent sessions.
 	def remember
 	    self.remember_token = User.new_token
