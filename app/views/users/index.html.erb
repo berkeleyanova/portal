@@ -1,6 +1,8 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
+<span>Search By Name:</span>
+<%= text_field_tag :search, "", id: "search-bar"%>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+<div id="users">
+    <%= render 'users' %>
+</div>

@@ -2,3 +2,29 @@
 <h1>
   <%= @user.name %>
 </h1>
+<center><%= image_tag @user.photo.url(:large), :style => "border: 10px solid black;"%></center><br><br>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <u1 class="users">
+            <li><span style="float:left">Name</span><span style="float:right"><%=@user.name%></span></li>
+            <li><span style="float:left">Email</span><span style="float:right"><%=@user.email%></span></li>
+            <li><span style="float:left">Phone</span><span style="float:right"><%=@user.phone%></span></li>
+            
+            
+            <% if @user.year? %>
+                <li><span style="float:left">Year</span><span style="float:right"><%=@user.year%></span></li>
+                <% end %>
+            <% if @user.birthday? %>
+                <li><span style="float:left">Birthday</span><span style="float:right"><%=@user.birthday%></span></li>
+                <% end %>
+                
+            <% if @user.favprog? %>
+                <li><span style="float:left">Favorite Programming Language</span><span style="float:right"><%=@user.favprog%></span></li>
+                <% end %>
+                
+            <% if @user.food? %>
+                <li><span style="float:left">Favorite Food</span><span style="float:right"><%=@user.food%></span></li>
+                <% end %>
+        </u1>
+    </div>
+</div>

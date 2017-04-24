@@ -1,18 +1,38 @@
-<%= form_for(@user) do |f| %>
+
+<%= form_for @user, html: { multipart: true } do |f| %>
   <%= render 'shared/error_messages', object: @user %>
-
-  <%= f.label :name %>
+  <p>Starred fields (*) are required</p>
+  <%= f.label "Name * " %>
   <%= f.text_field :name, class: 'form-control' %>
+  
+  <%= f.label "Year *" %>
+  <%= f.select :year, [['1st', '1st'], ['2nd', '2nd'], ['3rd', '3rd'], ['4th', '4th'], ['Other', 'Other']] %>
 
-  <%= f.label :email %>
+  <span><strong>Email * (must be a Berkeley email)</strong> </span>
   <%= f.email_field :email, class: 'form-control' %>
 
-  <%= f.label :password %>
+  <%= f.label "Password *" %>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label "Password Confirmation *" %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
+  
+  <%= f.label "Phone *" %>
+  <%= f.text_field :phone, class: 'form-control' %>
+   
+  <%= f.label "Photo of Yourself! * " %>
+  <%= f.file_field :photo, class: 'form-control' %>
 
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday, class: 'form-control' %>
+
+
+  <%= f.label "Favorite Programming Language" %>
+  <%= f.text_field :favprog, class: 'form-control' %>
+  
+  <%= f.label "Favorite Food" %>
+  <%= f.text_field :food, class: 'form-control' %>
+  
   <% if yield(:require_code) == 'True' %>
     <%= f.label :access_code %>
     <%= f.text_field "access_code", class: 'form-control' %>

@@ -1,0 +1,37 @@
+<ul class="users">
+    <% index = 0 %>
+    <% while (index < @users.length) do%>
+      <div class="row">
+            <div class="col-sm-4">
+                <%= link_to user_path(@users[index]) do %>
+                <%= image_tag @users[index].photo.url(:medium) %><br><br>
+                <% end %>
+                <%= link_to @users[index].name, user_path(@users[index])%> 
+                <% index += 1 %>
+                <br>
+            </div>
+            <div class="col-sm-4">
+
+                <% if index != @users.length %>
+                    <%= link_to user_path(@users[index]) do %>
+                    <%= image_tag @users[index].photo.url(:medium) %><br><br>
+                    <% end %>
+                    <%= link_to @users[index].name, user_path(@users[index])%> 
+                    <% index += 1 %>
+                    <br>
+                <% end %>
+            </div>
+            <div class="col-sm-4">
+                <% if index != @users.length %>
+                    <%= link_to user_path(@users[index]) do %>
+                    <%= image_tag @users[index].photo.url(:medium) %><br><br>
+                    <% end %>
+                    <%= link_to @users[index].name, user_path(@users[index])%> 
+                    <% index += 1 %>
+                    <br>
+                <% end %>
+            </div>
+        </div>
+        
+    <%end%>
+</ul>
